@@ -78,6 +78,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
 
         binding.dessertButton.setOnClickListener {
             onDessertClicked()
+
         }
 
         // Setup dessertTimer, passing in the lifecycle
@@ -188,6 +189,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
     /** Lifecycle Methods **/
     override fun onStart() {
         super.onStart()
+        dessertTimer.startTimer()
         Timber.i("onStart Called")
     }
 
@@ -203,6 +205,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
 
     override fun onStop() {
         super.onStop()
+        dessertTimer.stopTimer()
         Timber.i("onStop Called")
     }
 
@@ -215,4 +218,5 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         super.onRestart()
         Timber.i("onRestart Called")
     }
+
 }
