@@ -55,6 +55,12 @@ class DessertTimer(lifecycle: Lifecycle) : LifecycleObserver {
         // activity's lifecycle state
         lifecycle.addObserver(this)
     }
+//    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+//    fun dummyMethod(){
+//
+//        Timber.i("Rafiiii")
+//
+//    }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun startTimer() {
